@@ -7,7 +7,6 @@ import {HashRouter, Route} from 'react-router-dom';
 import ComponentLink from './ComponentLink';
 import styles from './Application.css';
 import NavLink from './NavLink';
-import Wizard from './Wizard';
 import {TYPES} from './Icon';
 import {generateRandomList} from './utils';
 
@@ -99,9 +98,6 @@ export default class Application extends React.PureComponent {
                 <NavLink to="/components/List" iconType={TYPES.COMPONENTS}>
                   Components
                 </NavLink>
-                <NavLink to="/wizard" iconType={TYPES.WIZARD}>
-                  Wizard
-                </NavLink>
                 <NavLink
                   href="https://github.com/bvaughn/react-virtualized"
                   iconType={TYPES.SOURCE}>
@@ -162,7 +158,6 @@ export default class Application extends React.PureComponent {
             className={bodyStyle}
             ref={e => this.setState({customElement: e})}>
             <div className={styles.column}>
-              <Route path="/wizard" component={Wizard} />
               {Object.keys(COMPONENT_EXAMPLES_MAP).map(route => (
                 <Route
                   key={route}
